@@ -1,0 +1,122 @@
+@import url("https://fonts.googleapis.com/css2?family=Signika+Negative:wght@300..700&display=swap");
+
+* {
+	margin: 0%;
+	padding: 0%;
+	box-sizing: border-box;
+
+	font-size: large;
+	font-family: "Signika Negative", sans-serif;
+}
+
+html {
+	background: linear-gradient(rgb(175, 103, 199), rgb(0, 39, 168));
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+}
+
+#content {
+	width: 60rem;
+	margin: auto;
+	margin-top: 1rem;
+	border-radius: 0.3rem;
+
+	padding: 1rem;
+
+	background: beige;
+}
+
+#buttons {
+	width: 20rem;
+	margin: auto;
+
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	column-gap: 1.2rem;
+}
+
+button {
+	aspect-ratio: 1/1;
+	font-size: 2rem;
+	text-shadow: 0.1em 0.1em rgba(0, 0, 0, 0.5);
+
+	background: burlywood;
+	border: none;
+	border-radius: 10%;
+	box-shadow: 0.25rem 0.25rem rgba(0, 0, 0, 0.5);
+}
+
+button:active {
+	transform: translateX(0.15rem) translateY(0.15rem);
+	box-shadow: 0.1rem 0.1rem rgba(0, 0, 0, 0.5);
+}
+
+button:hover {
+	filter: brightness(85%);
+}
+
+h1 {
+	margin: 1rem;
+
+	color: aliceblue;
+	font-size: 2.8rem;
+	text-align: center;
+	text-shadow: 0.2rem 0.2rem rgba(0, 0, 0, 0.5);
+}
+
+h2 {
+	text-align: center;
+	font-size: 1.8rem;
+}
+
+p {
+	font-size: 3rem;
+
+	text-shadow: 0.2rem 0.2rem rgba(0, 0, 0, 0.5);
+	text-align: center;
+	margin-bottom: 1rem;
+}
+
+#game {
+	width: 70%;
+	margin: auto;
+}
+
+#players {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	margin: 1rem auto;
+	display: none;
+	align-items: center;
+}
+
+.score {
+	aspect-ratio: 1/1;
+	height: 100%;
+	border-radius: 100%;
+	margin: auto;
+	background: green;
+	color: white;
+	text-shadow: 0.1rem 0.1rem rgba(0, 0, 0, 0.5);
+	box-shadow: 0.2rem 0.2rem rgba(0, 0, 0, 0.5);
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+#losses {
+	background: red;
+}
+
+#status {
+	color: white;
+	background: orangered;
+	padding: 1rem;
+	margin: auto;
+	width: 45%;
+	border-radius: 3rem;
+	margin-bottom: 1rem;
+
+	text-shadow: 0.1rem 0.1rem rgba(0, 0, 0, 0.5);
+	box-shadow: 0.15rem 0.15rem rgba(0, 0, 0, 0.5);
+}
