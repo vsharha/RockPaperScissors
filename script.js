@@ -12,7 +12,13 @@ const statusDisplay = document.querySelector("#status");
 const p1winDisplay = document.querySelector("#wins h2");
 const p2winDisplay = document.querySelector("#losses h2");
 
+const style = getComputedStyle(document.body);
+
 const rps = ["🪨", "📄", "✂️"];
+
+function getCSSvar(varName) {
+	return style.getPropertyValue("--" + varName);
+}
 
 function onReady() {
 	for (let button of buttons) {
@@ -39,7 +45,7 @@ function rchoice(array) {
 function checkWin() {
 	if (player1 == player2) {
 		gameStatus = "Draw!";
-		statusDisplay.style.background = "blue";
+		statusDisplay.style.background = getCSSvar("draw-color");
 		return;
 	}
 
@@ -49,17 +55,17 @@ function checkWin() {
 		(player1 == "✂️" && player2 == "🪨")
 	) {
 		p1winCounter++;
-		statusDisplay.style.background = "green";
+		statusDisplay.style.background = getCSSvar("win-color");
 		gameStatus = "You won!";
 	} else {
 		p2winCounter++;
-		statusDisplay.style.background = "red";
+		statusDisplay.style.background = getCSSvar("loss-color");
 		gameStatus = "You lost!";
 	}
 }
 
 function processInput(el) {
-	statusDisplay.style.width = "30%";
+	statusDisplay.style.width = getCSSvar("status-width");
 	statusDisplay.style.padding = "0.5rem";
 	document.querySelector("#players").style.display = "grid";
 
