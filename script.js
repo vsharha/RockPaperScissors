@@ -50,9 +50,9 @@ function checkWin() {
 	}
 
 	if (
-		(player1 == "🪨" && player2 == "📄") ||
-		(player1 == "📄" && player2 == "✂️") ||
-		(player1 == "✂️" && player2 == "🪨")
+		(player1 == "📄" && player2 == "🪨") ||
+		(player1 == "✂️" && player2 == "📄") ||
+		(player1 == "🪨" && player2 == "✂️")
 	) {
 		p1winCounter++;
 		statusDisplay.style.background = getCSSvar("win-color");
