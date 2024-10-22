@@ -21,6 +21,7 @@ html {
 	background: linear-gradient(rgb(175, 103, 199), rgb(0, 39, 168));
 	background-repeat: no-repeat;
 	background-attachment: fixed;
+	overflow: hidden;
 }
 
 #content {
