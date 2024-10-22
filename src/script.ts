@@ -1,22 +1,22 @@
-let player1;
-let player2;
+let player1: string;
+let player2: string;
 
 let p1winCounter = 0;
 let p2winCounter = 0;
 let gameStatus = "";
 
-const buttons = document.querySelectorAll("button");
-const p1display = document.querySelector("#p1");
-const p2display = document.querySelector("#p2");
-const statusDisplay = document.querySelector("#status");
-const p1winDisplay = document.querySelector("#wins h2");
-const p2winDisplay = document.querySelector("#losses h2");
+const buttons: NodeListOf<HTMLElement> = document.querySelectorAll("button");
+const p1display: HTMLElement = document.querySelector("#p1");
+const p2display: HTMLElement = document.querySelector("#p2");
+const statusDisplay: HTMLElement = document.querySelector("#status");
+const p1winDisplay: HTMLElement = document.querySelector("#wins h2");
+const p2winDisplay: HTMLElement = document.querySelector("#losses h2");
 
 const style = getComputedStyle(document.body);
 
 const rps = ["🪨", "📄", "✂️"];
 
-function getCSSvar(varName) {
+function getCSSvar(varName: string) {
 	return style.getPropertyValue("--" + varName);
 }
 
@@ -28,15 +28,15 @@ function onReady() {
 	}
 }
 
-window.onload = onReady();
+window.onload = onReady;
 
 // random
 
-function randint(min, max) {
+function randint(min: number, max: number) {
 	return Math.floor(Math.random() * (max - min)) + min;
 }
 
-function rchoice(array) {
+function rchoice(array: Array<any>) {
 	return array[randint(0, array.length)];
 }
 
@@ -64,10 +64,10 @@ function checkWin() {
 	}
 }
 
-function processInput(el) {
+function processInput(el: HTMLElement) {
 	statusDisplay.style.width = getCSSvar("status-width");
 	statusDisplay.style.padding = "0.5rem";
-	document.querySelector("#players").style.display = "grid";
+	(document.querySelector("#players") as HTMLElement).style.display = "grid";
 
 	player1 = el.innerHTML;
 	player2 = rchoice(rps);
@@ -78,6 +78,6 @@ function processInput(el) {
 	checkWin();
 
 	statusDisplay.innerHTML = gameStatus;
-	p1winDisplay.innerHTML = p1winCounter;
-	p2winDisplay.innerHTML = p2winCounter;
+	p1winDisplay.innerHTML = p1winCounter.toString();
+	p2winDisplay.innerHTML = p2winCounter.toString();
 }
